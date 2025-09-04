@@ -8,14 +8,23 @@ public class Note {
 	    private Long id;
 
 	    private String title;
+	    @Column(columnDefinition = "TEXT")
 	    private String content;
 	    private LocalDateTime createdAt;
+	    
 	    private String category;
 
-	    @PrePersist
+
+
+		@PrePersist
 	    protected void onCreate() {
 	        createdAt = LocalDateTime.now();
 	    }
+
+   public Note() {
+        
+    }
+
 
 	    public String getCategory() {
 			return category;

@@ -1,8 +1,10 @@
 package com.example.NotemakingApp.Controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.NotemakingApp.Model.Note;
@@ -41,6 +43,10 @@ public class NoteController {
                     return noteRepository.save(note);
                 }).orElseThrow(() -> new RuntimeException("Note not found"));
     }
+
+
+
+
 
     @DeleteMapping("/{id}")
     public void deleteNote(@PathVariable Long id) {
